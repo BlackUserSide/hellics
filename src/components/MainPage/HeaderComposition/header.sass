@@ -1,0 +1,63 @@
+.site-header
+    position: relative
+    z-index: 2
+    display: flex
+    justify-content: space-around
+    align-items: center
+    .main-nav-wrapper
+        width: 60%
+        font-style: normal
+        font-weight: 400
+        ul
+            list-style-type: none
+            display: flex
+            justify-content: space-between
+            width: 100%
+            .link-wrapper-main
+                display: flex
+                align-items: center
+                a
+                    font-size: 18px
+                //------Phone
+                .link-phone
+                    color: #ffffff
+                    text-decoration: none
+                    transition: .5s ease
+                    &:hover
+                        color: #D6B33F
+                //-------BTN ORDER CALL
+                .order-call-link
+                    color: #ffffff
+                    text-decoration: none
+                    position: relative
+                    overflow: hidden
+                    padding-bottom: 5px
+                    transition: .3s ease
+                    &:hover
+                        color: #D6B33F
+                        &::after
+                            width: 100%
+                            opacity: 1
+                    &::after
+                        content: ''
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                        background-color: #fff
+                        width: 0% 
+                        height: 2px
+                        opacity: 0
+                        transition: .4s ease
+                        transition-delay: .3s
+                //------BTN ORDER 
+                .order-fly-link
+                    color: #ffffff
+                    text-decoration: none
+                    background: #D6B33F
+                    padding: 15px
+                    border-radius: 10px
+                    transition: .5s ease
+                    &:hover
+                        transform: scale(1.1)
+                
+                
