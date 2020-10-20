@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import "./App.sass";
+import { Footer } from "./components/FooterComposition/Footer";
 import { MainPage } from "./components/MainPage/MainPage";
 
 export const App = () => {
@@ -10,6 +11,7 @@ export const App = () => {
       <Switch>
         <Route path="/" exact component={MainPage} />
       </Switch>
+      <Footer />
     </div>
   );
 };
