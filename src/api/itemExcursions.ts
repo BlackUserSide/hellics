@@ -8,7 +8,7 @@ export const ItemExcursions = [
     name: "Москва с вертолета",
     time: "0:40",
     image: Icon1,
-    category: 0,
+    category: 1,
   },
   {
     id: 1,
@@ -22,6 +22,6 @@ export const ItemExcursions = [
     name: "“Почувствуй себя пилотом!”",
     time: "0:45",
     image: Icon3,
-    category: 0,
+    category: 1,
   },
 ];
