@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-
 import "./App.sass";
+import "./components/media.sass";
 import { CardItemWrapper } from "./components/CartItem/CardItemWrapper";
 import { Footer } from "./components/FooterComposition/Footer";
 import { MainPage } from "./components/MainPage/MainPage";

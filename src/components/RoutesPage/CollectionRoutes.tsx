@@ -1,4 +1,3 @@
-import { strict } from "assert";
 import React, { useEffect, useState } from "react";
 import { ItemExcursions } from "../../api/itemExcursions";
 import { ItemRouteWrap } from "./ItemRouteWrap";

@@ -22,7 +22,7 @@ export const CardItemWrapper: React.FC = () => {
       });
       setDataItem(letData);
     }
-  }, []);
+  }, [param]);
   console.log(dataItem);
 
   return (

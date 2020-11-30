@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { TArrayItem } from "./types";
 import timeIcon from "../../image/time-vals.png";
 type TProps = {
