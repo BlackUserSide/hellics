@@ -14,7 +14,7 @@
     padding: 30px 70px
     max-width: 100%
     .nav-routes-wrap
-        width: 30%
+        width: 60%
         ul
             margin: 0
             padding: 10px 0
@@ -49,6 +49,8 @@
             justify-content: center
             align-items: center
             cursor: pointer
+            width: 350px
+            margin-bottom: 25px
             .image-wrapper 
                 width: 225px
                 margin-bottom: 10px
@@ -118,3 +120,22 @@
                 transition: all .3s ease
                 &:hover
                     transform: scale(1.1)
+@media screen and ( max-width: 780px )
+    .text-second-wrapper
+        padding: 30px 15px
+@media screen and ( max-width: 730px )
+    .text-second-wrapper
+        display: none
+    .text-firs-wrapp
+        padding: 30px 15px
+    .wrapper-collection-routes
+        flex-direction: column
+        align-items: center
+        .nav-routes-wrap
+            width: 75%
+@media screen and ( max-width: 480px )
+    .top-line
+        .h1
+            font-size: 30px
+    
+    

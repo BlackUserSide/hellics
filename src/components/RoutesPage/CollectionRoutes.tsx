@@ -12,11 +12,20 @@ export const CollectionRoutes: React.FC<TProps> = ({ cases }) => {
     dataItem: [],
     title: "",
   });
+  const dataContent = ItemExcursions;
   useEffect(() => {
     let data: any = [];
+
     switch (cases) {
       case 1:
-        const dataContent = ItemExcursions;
+        data = dataContent.filter((e) => {
+          if (e.category === cases) {
+            return e;
+          }
+          return false;
+        });
+        break;
+      case 2:
         data = dataContent.filter((e) => {
           if (e.category === cases) {
             return e;
@@ -31,7 +40,7 @@ export const CollectionRoutes: React.FC<TProps> = ({ cases }) => {
       dataItem: data,
       title: title,
     }));
-  }, [cases]);
+  }, [cases, dataContent]);
   console.log(data);
   return (
     <div className="wrapper-item-routes-task">

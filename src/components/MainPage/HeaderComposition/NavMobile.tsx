@@ -28,10 +28,10 @@ export const NavMobile: React.FC<TProps> = ({ active, setMenu }) => {
             </a>
           </li>
           <li>
-            <Link to="">Учебный центр</Link>
+            <Link to="/educational-center">Учебный центр</Link>
           </li>
           <li>
-            <Link to="">Маршруты полетов</Link>
+            <Link to="/routes">Маршруты полетов</Link>
           </li>
           <li>
             <Link to="">Инфраструктура комплекса</Link>
