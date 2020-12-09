@@ -14,7 +14,7 @@ export const MainNavBlack: React.FC = () => {
         <nav className="main-nav-black">
           <ul className="nav-main-black">
             <li className="nav-link-black">
-              <Link to="/routes">Учебный центр</Link>
+              <Link to="/educational-center">Учебный центр</Link>
             </li>
             <li className="nav-link-black">
               <Link to="/routes">Маршруты полетов</Link>

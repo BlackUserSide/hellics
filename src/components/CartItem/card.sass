@@ -7,6 +7,8 @@
     .text-card-composition
         display: flex
         flex-direction: column
+        max-width: 100%
+        padding: 0 35px
         .top-line-wrapp-card
             .h1
                 font-size: 50px
@@ -19,7 +21,7 @@
             justify-content: space-between
         .flex-compose
             display: flex
-            max-width: 70%
+            max-width: 100%
             justify-content: space-between
             align-items: center
             .select-atribute
@@ -35,3 +37,30 @@
                 color: #ffffff
                 padding: 12px 35px
                 border-radius: 10px
+
+@media screen and ( max-width: 1110px )
+    .card-item-wrapper 
+        .text-card-composition 
+            .top-line-wrapp-card 
+                .h1
+                    font-size: 36px
+            .flex-compose 
+                flex-direction: column
+@media screen and ( max-width: 830px )
+    .card-item-wrapper
+        flex-direction: column
+        align-items: center
+        
+        justify-content: center
+        .image-wrapper-s
+            max-width: 50%
+@media screen and ( max-width: 520px )
+    .card-item-wrapper 
+        .image-wrapper-s
+            max-width: 100%
+            img
+                width: 100%
+    
+        
+    
+

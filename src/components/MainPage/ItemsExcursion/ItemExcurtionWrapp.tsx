@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type TItem = {
   content: {
@@ -12,14 +13,19 @@ type TItem = {
 export const ItemExcurtionWrapp: React.FC<TItem> = ({ content }) => {
   return (
     <div className="ItemExcurtionWrapp">
-      <div className="image-wrapper">
-        <img src={content.image} alt="" />
-      </div>
-      <h3 className="h3">{content.name}</h3>
-      <p>
-        <span></span>
-        {content.time}
-      </p>
+      <Link
+        to={`/card/${content.id}`}
+        style={{ textDecoration: "none", color: "#000" }}
+      >
+        <div className="image-wrapper">
+          <img src={content.image} alt="" />
+        </div>
+        <h3 className="h3">{content.name}</h3>
+        <p>
+          <span></span>
+          {content.time}
+        </p>
+      </Link>
     </div>
   );
 };

@@ -1,0 +1,97 @@
+.header-wrapper-card
+    background: url('../../image/bg-lessons.svg')
+    padding: 70px 0px
+    margin: 35px 0
+    background-size: cover
+    background-position: center
+    text-align: center
+    .h1
+        color: #ffffff
+        text-transform: uppercase
+        font-size: 32px
+.card-collection-center-wrapper
+    max-width: 100%
+    padding: 35px 70px
+    .flex-wrap-card
+        max-width: 100%
+        display: flex
+        
+        .text-wrapper-card
+            max-width: 60%
+            display: flex
+            flex-direction: column
+            padding: 25px 70px
+        .item-card-text
+            display: flex
+            max-width: 100%
+            .logo-item
+                font-weight: 700
+                color: #4d4d4d
+                width: 30%
+                font-size: 18px
+            .tag-exp
+                width: 70%
+                color: #4d4d4d
+                font-weight: 300
+                font-size: 18px
+        .list-wrapper-card
+            list-style-type: none
+            li
+                margin-bottom: 15px
+                position: relative
+                &::after
+                    content: ''
+                    position: absolute
+                    background: #fbb700
+                    left: -5%
+                    bottom: 30%
+                    width: 7px
+                    height: 7px
+                    border-radius: 50%
+        .h3
+            font-size: 22px
+            margin-bottom: 55px
+    .action-card-form
+        background-color: #f4f6fb
+        padding: 32px
+        border-radius: 8px
+        color: #4d4d4d
+        .top-line-form
+            .h3
+                font-size: 22px
+                color: #4d4d4d
+                margin-bottom: 10px
+        .price-wrapper
+            p
+                margin-bottom: 5px
+            .h3
+                margin-top: 5px
+                margin-bottom: 10px
+                font-size: 24px
+        .form-body
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin-bottom: 25px
+            input
+                width: 50%
+                display: inline-block
+                margin-bottom: 15px
+                padding: 15px 22px
+                border-radius: 8px
+                outline: none
+                &:focus
+                    border-color: #fbb700
+        button
+            font-size: 18px
+            color: #ffffff
+            background-color: #fbb700
+            border: none
+            display: inline-block
+            cursor: pointer
+            padding: 15px 25px
+            border-radius: 8px
+            transition: .3s ease
+            &:hover
+               background-color: rgba(#fbb700, .7) 
+                
