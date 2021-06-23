@@ -33,6 +33,78 @@ export const CollectionRoutes: React.FC<TProps> = ({ cases }) => {
           return false;
         });
         break;
+      case 3:
+        data = dataContent.filter((e) => {
+          if (e.category === cases) {
+            return e;
+          }
+          return false;
+        });
+        break;
+      case 4:
+        data = dataContent.filter((e) => {
+          if (e.category === cases) {
+            return e;
+          }
+          return false;
+        });
+        break;
+      case 5:
+        data = dataContent.filter((e) => {
+          if (e.category === cases) {
+            return e;
+          }
+          return false;
+        });
+        break;
+      case 6:
+        data = dataContent.filter((e) => {
+          if (e.category === cases) {
+            return e;
+          }
+          return false;
+        });
+        break;
+      case 7:
+        data = dataContent.filter((e) => {
+          if (e.category === cases) {
+            return e;
+          }
+          return false;
+        });
+        break;
+      case 8:
+        data = dataContent.filter((e) => {
+          if (e.category === cases) {
+            return e;
+          }
+          return false;
+        });
+        break;
+      case 9:
+        data = dataContent.filter((e) => {
+          if (e.category === cases) {
+            return e;
+          }
+          return false;
+        });
+        break;
+      case 10:
+        data = dataContent.filter((e) => {
+          if (e.category === cases) {
+            return e;
+          }
+          return false;
+        });
+        break;
+      case 11:
+        data = dataContent.filter((e) => {
+          if (e.category === cases) {
+            return e;
+          }
+          return false;
+        });
+        break;
     }
     const title = titleChange(cases);
     setData((prev) => ({

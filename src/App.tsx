@@ -10,6 +10,8 @@ import { CenterWrapper } from "./components/CenterEdPage/CenterWrapper";
 import { CardCenterWrapper } from "./components/CardCenter/CardCenterWrapper";
 import { MainWidthContent, TPartial } from "./components/MainWidthContet";
 import { Context, LangContext } from "./LangContext";
+import { InfraMain } from "./components/Infrastructure/InfraMain";
+import { CardInfra } from "./components/Infrastructure/InfraComposition/CardInfra";
 
 export const App = () => {
   const [width, setWidth] = useState(0);
@@ -62,6 +64,8 @@ export const App = () => {
               <Route path="/card/:id" component={CardItemWrapper} />
               <Route path="/educational-center" component={CenterWrapper} />
               <Route path="/card-center/:id" component={CardCenterWrapper} />
+              <Route path="/infra" component={InfraMain} />
+              <Route path="/infrad/card/:id" component={CardInfra} />
             </Switch>
             <Footer />
           </Context.Provider>

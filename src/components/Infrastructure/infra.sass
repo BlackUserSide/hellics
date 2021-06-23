@@ -1,0 +1,32 @@
+.infra-item
+    text-decoration: none
+.items
+    display: flex
+    align-items: center
+    justify-content: space-around
+    flex-wrap: wrap
+    .infra-item
+        display: flex
+        border: 1px #E5E5E5 solid
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+        height: 100%
+        min-height: 250px
+        margin: 30px
+        transition: all .3s ease
+        strong
+        &:hover
+            color: #FBB700 
+.items-card
+    display: flex
+    padding: 10px 50px
+    flex-direction: column
+    min-width: 50%
+    align-items: center
+    justify-content: center
+    p
+        max-width: 50%
+    img 
+        width: 40%
+        height: 50%
