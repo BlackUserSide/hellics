@@ -1,5 +1,6 @@
 export interface IStateTextCenter {
   id: number;
+  fullNameEng: string;
   fullName: string;
   dob: string;
   fullFly: string;

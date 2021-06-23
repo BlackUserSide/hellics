@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Context } from "../../LangContext";
 import { CenterItemWrapper } from "./CenterItemWrapper";
 import { CenterContext } from "./context/CenterContext";
 import { TContextTypeCenter } from "./context/type";
@@ -15,11 +16,16 @@ export const CenterCollection: React.FC = () => {
       setCategory(categoryVal);
     },
   };
+  const lang = useContext(Context);
   return (
     <CenterContext.Provider value={centerContext}>
       <div className="center-collection">
         <div className="wrapper-image-col">
-          <h1 className="h1">АВИАЦИОННЫЙ УЧЕБНЫЙ ЦЕНТР</h1>
+          <h1 className="h1">
+            {lang === "ru"
+              ? "АВИАЦИОННЫЙ УЧЕБНЫЙ ЦЕНТР"
+              : "AVIATION TRAINING CENTER"}
+          </h1>
         </div>
         <CenterItemWrapper />
       </div>

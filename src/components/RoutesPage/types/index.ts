@@ -13,4 +13,5 @@ export type TArrayItem = {
   time: string;
   image: string;
   category: number;
+  nameEng: string;
 };

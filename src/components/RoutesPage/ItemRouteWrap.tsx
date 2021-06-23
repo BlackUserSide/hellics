@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TArrayItem } from "./types";
 import timeIcon from "../../image/time-vals.png";
 import { Link } from "react-router-dom";
+import { Context } from "../../LangContext";
 type TProps = {
   content: TArrayItem;
 };
 
 export const ItemRouteWrap: React.FC<TProps> = ({ content }) => {
+  const lang = useContext(Context);
+
   return (
     <div className="item-wrapper-route">
       <Link
@@ -17,7 +20,7 @@ export const ItemRouteWrap: React.FC<TProps> = ({ content }) => {
           <img src={content.image} alt="" />
         </div>
         <div className="name-wrapper">
-          <span>{content.name}</span>
+          <span>{lang === "ru" ? content.name : content.nameEng}</span>
         </div>
         <div className="time-wrapper">
           <img src={timeIcon} alt="" />

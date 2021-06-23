@@ -1,38 +1,45 @@
 export const titleChange = (cases: number) => {
+  const lang = localStorage.getItem("lang");
+  console.log(lang, "local");
+
   let title: string = "";
   switch (cases) {
     case 1:
-      title = "Экскурсионные полеты";
+      title = lang === "ru" ? "Экскурсионные полеты" : "Sightseeing flights";
       return title;
     case 2:
-      title = "Популярные маршруты";
+      title = lang === "ru" ? "Популярные маршруты" : "Popular routes";
       return title;
     case 3:
-      title = "Города Север";
+      title = lang === "ru" ? "Города Север" : "Cities of the North";
       return title;
     case 4:
-      title = "Города Запад";
+      title = lang === "ru" ? "Города Запад" : "Cities of the West";
       return title;
     case 5:
-      title = "Города Юг";
+      title = lang === "ru" ? "Города Юг" : "Cities South";
       return title;
     case 6:
-      title = "Города Восток";
+      title = lang === "ru" ? "Города Восток" : "Cities East";
       return title;
     case 7:
-      title = "Охота/Рыбалка";
+      title = lang === "ru" ? "Охота/Рыбалка" : "Hunting Fishing";
       return title;
     case 8:
-      title = "Яхт-клубы/загородные клубы";
+      title =
+        lang === "ru"
+          ? "Яхт-клубы/загородные клубы"
+          : "Yacht Clubs / Country Clubs";
       return title;
     case 9:
-      title = "Гольф-клубы";
+      title = lang === "ru" ? "Гольф-клубы" : "Golf clubs";
       return title;
     case 10:
-      title = "Отели/Парки/заповедники";
+      title =
+        lang === "ru" ? "Отели/Парки/заповедники" : "Hotels / Parks / Reserves";
       return title;
     case 11:
-      title = "Подарочные сертификаты";
+      title = lang === "ru" ? "Подарочные сертификаты" : "Gift certificates";
       return title;
   }
 };

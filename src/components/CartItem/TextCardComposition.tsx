@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import { IStateCard } from "./type";
 import timeIcon from "../../image/time-vals.png";
 import Select from "react-select";
 import { PopUpForm } from "./PopUpForm";
+import { Context } from "../../LangContext";
 
 type TProps = {
   content: IStateCard | undefined;
@@ -17,6 +18,8 @@ export const TextCardComposition: React.FC<TProps> = ({ content }) => {
     value: 0,
     popUpStats: false,
   });
+  const lang = useContext(Context);
+
   const option: Array<ArraySelect> = [];
   content?.priceTrans.map((e, i) => {
     option.push({ label: `${e.name} (до ${e.candidate} человек)`, value: i });
@@ -46,7 +49,9 @@ export const TextCardComposition: React.FC<TProps> = ({ content }) => {
     <>
       <div className="text-card-composition">
         <div className="top-line-wrapp-card">
-          <h1 className="h1">{content?.name}</h1>
+          <h1 className="h1">
+            {lang === "ru" ? content?.name : content?.nameEng}
+          </h1>
         </div>
         <div className="time-wrap">
           <img src={timeIcon} alt="" />
@@ -62,12 +67,12 @@ export const TextCardComposition: React.FC<TProps> = ({ content }) => {
           />
           <p>{content?.priceTrans[dataHel.value].price} р.</p>
           <span className="btn btn-wrapper" onClick={popUpHandler}>
-            Заказать
+            {lang === "ru" ? "Заказать" : "To Order"}
           </span>
         </div>
 
         <div className="description-wrap">
-          <p>{content?.descMain}</p>
+          <p>{lang === "ru" ? content?.descMain : content?.descEng}</p>
         </div>
         <div className="wrapper-price-data"></div>
       </div>

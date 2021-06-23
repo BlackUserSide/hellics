@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import tellIcon from "../../../image/bx_bxs-phone-call.svg";
+import { Context, LangContext } from "../../../LangContext";
 export const NavBarMain = () => {
+  const { changeLang } = useContext(LangContext);
+  const change = (lang: string) => {
+    localStorage.setItem("lang", lang);
+    changeLang(lang);
+  };
+  const lang = useContext(Context);
+  const callOrder = lang === "ru" ? "Заказать звонок" : "Request a call";
+  const call = lang === "ru" ? "Заявка на полет" : "Flight application";
+
   return (
     <nav className="main-nav-wrapper">
       <ul className="nav-main">
@@ -18,13 +28,22 @@ export const NavBarMain = () => {
         </li>
         <li className="link-wrapper-main">
           <a href="/#" className="order-call-link">
-            Заказать звонок
+            {callOrder}
           </a>
         </li>
         <li className="link-wrapper-main">
           <a href="/#" className="order-fly-link">
-            Заявка на полет
+            {call}
           </a>
+        </li>
+        <li className="link-wrapper-main">
+          <div onClick={() => change("ru")} className="ru">
+            <span>ru </span>
+          </div>
+          <span>/</span>
+          <div onClick={() => change("eng")} className="eng">
+            <span>eng</span>
+          </div>
         </li>
       </ul>
     </nav>

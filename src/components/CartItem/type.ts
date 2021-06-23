@@ -3,10 +3,12 @@ export interface IRouteParam {
 }
 export interface IStateCard {
   name: string;
+  nameEng: string;
   time: string;
   category: number;
   id: number;
   image: string;
+  descEng: string;
   descMain: string;
   priceTrans: Array<ArrayType>;
 }

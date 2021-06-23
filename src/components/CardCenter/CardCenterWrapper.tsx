@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemCenter, TCenterType } from "../../api/ItemCenter";
+import { Context } from "../../LangContext";
 import { BlackHeader } from "../BlackHeader";
 import { IRouteParam } from "../CartItem/type";
 import { MainNavBlack } from "../MainNavBlack";
@@ -9,6 +10,7 @@ import "./cartcenter.sass";
 export const CardCenterWrapper: React.FC = () => {
   const [dataCenter, setDataCenter] = useState<TCenterType>({
     id: "0",
+    nameEng: "",
     name: "",
     period: "",
     typeHel: "",
@@ -16,14 +18,19 @@ export const CardCenterWrapper: React.FC = () => {
     les: "",
     exam: "",
     price: "",
+    certificationEng: "",
     certification: "",
+    docsEng: [],
     docs: [],
+    theoryEng: [],
     theory: [],
+    practiceEng: [],
     practice: [],
     category: "",
     image: "",
   });
   const param = useParams<IRouteParam>();
+  const lang = useContext(Context);
 
   useEffect(() => {
     const dataItem = ItemCenter;
@@ -42,7 +49,9 @@ export const CardCenterWrapper: React.FC = () => {
       <BlackHeader />
       <MainNavBlack />
       <div className="header-wrapper-card">
-        <h1 className="h1">{dataCenter.name}</h1>
+        <h1 className="h1">
+          {lang === "ru" ? dataCenter.name : dataCenter.nameEng}
+        </h1>
       </div>
       <CardCollectionCenter content={dataCenter} />
     </>

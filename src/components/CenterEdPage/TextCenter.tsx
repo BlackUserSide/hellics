@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IStateTextCenter } from "./types";
 import AvatarTeacher from "../../image/avatarTeacher/1.jpg";
+import { Context } from "../../LangContext";
 
 export const TextCenter = () => {
   const [dataText] = useState<Array<IStateTextCenter>>([
     {
       id: 1,
+      fullNameEng: "Zikeev Vyacheslav Sergeevich",
       fullName: "Зикеев Вячеслав Сергеевич",
       dob: "1979",
       fullFly: "4550",
@@ -15,11 +17,14 @@ export const TextCenter = () => {
       ],
     },
   ]);
+  const lang = useContext(Context);
   return (
     <div className="text-center-composition">
       <div className="teacher-wrapper">
         <div className="top-line-teacher">
-          <h1 className="h1">ПРЕПОДАВАТЕЛЬСКИЙ состав</h1>
+          <h1 className="h1">
+            {lang === "ru" ? "ПРЕПОДАВАТЕЛЬСКИЙ состав" : "Teaching Staff"}
+          </h1>
         </div>
         {dataText.map((e, i) => (
           <div className="teacher-item" key={i}>
@@ -27,21 +32,29 @@ export const TextCenter = () => {
               <img src={AvatarTeacher} alt="" />
             </div>
             <div className="text-teacher-wrapper">
-              <h1 className="h1">{e.fullName}</h1>
+              <h1 className="h1">
+                {lang === "ru" ? e.fullName : e.fullNameEng}
+              </h1>
               <div className="dob-wrap">
                 <span>
-                  <strong>Год рождения:</strong>
+                  <strong>
+                    {lang === "ru" ? "Год рождения:" : "Year of birth:"}
+                  </strong>
                 </span>
                 <span>{e.dob}</span>
               </div>
               <div className="full-fly-wrap">
                 <span>
-                  <strong>Общий налет:</strong>
+                  <strong>
+                    {lang === "ru" ? "Общий налет:" : "Total plaque:"}
+                  </strong>
                 </span>
-                <span>{e.fullFly} часов</span>
+                <span>
+                  {e.fullFly} {lang === "ru" ? "часов" : "hours"}
+                </span>
               </div>
               <div className="hell-wrap-teacher">
-                <span>Инструктор: </span>
+                <span>{lang === "ru" ? "Инструктор: " : "Instructor: "}</span>
                 {e.helicopters.map((e, i) => (
                   <span key={i}>{e.name}, </span>
                 ))}

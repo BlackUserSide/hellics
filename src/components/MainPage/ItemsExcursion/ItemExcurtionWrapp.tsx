@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../../LangContext";
 
 type TItem = {
   content: {
@@ -7,10 +8,13 @@ type TItem = {
     id: number;
     time: string;
     image: string;
+    nameEng: string;
+    descEng: string;
   };
 };
 
 export const ItemExcurtionWrapp: React.FC<TItem> = ({ content }) => {
+  const lang = useContext(Context);
   return (
     <div className="ItemExcurtionWrapp">
       <Link
@@ -20,7 +24,7 @@ export const ItemExcurtionWrapp: React.FC<TItem> = ({ content }) => {
         <div className="image-wrapper">
           <img src={content.image} alt="" />
         </div>
-        <h3 className="h3">{content.name}</h3>
+        <h3 className="h3">{lang === "ru" ? content.name : content.nameEng}</h3>
         <p>
           <span></span>
           {content.time}
