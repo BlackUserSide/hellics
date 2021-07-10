@@ -51,6 +51,7 @@ export const Footer: React.FC = () => {
                 animationDuration={0.5}
               />
               <NavMobile active={menu} setMenu={() => setMenu(false)} />
+              <LinkFooter />
             </div>
           ) : (
             <LinkFooter />

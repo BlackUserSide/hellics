@@ -14,11 +14,7 @@ export const BlackHeader: React.FC = () => {
       <div className="nav-contact">
         <a href="/#">
           <img src={phoneLogo} alt="" />
-          7(800)551-77-96
-        </a>
-        <a href="/#">
-          <img src={phoneLogo} alt="" />
-          7(800)551-77-96
+          +8-800-555-61-47
         </a>
       </div>
       <a href="/#" className="routes-link">

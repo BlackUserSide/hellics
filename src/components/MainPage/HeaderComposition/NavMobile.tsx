@@ -31,16 +31,11 @@ export const NavMobile: React.FC<TProps> = ({ active, setMenu }) => {
           </li>
           <li>
             <img src={tellIcon} alt="" />
-            <a href="tel:+7 (800) 551-77-96" className="link-phone">
-              +7 (800) 551-77-96
+            <a href="tel:+8-800-555-61-47" className="link-phone">
+              +8-800-555-61-47
             </a>
           </li>
-          <li>
-            <img src={tellIcon} alt="" />
-            <a href="tel:+7 (800) 551-77-96" className="link-phone">
-              +7 (800) 551-77-96
-            </a>
-          </li>
+
           <li>
             <Link to="/educational-center">{lessens}</Link>
           </li>

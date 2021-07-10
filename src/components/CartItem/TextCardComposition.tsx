@@ -80,7 +80,7 @@ export const TextCardComposition: React.FC<TProps> = ({ content }) => {
         <PopUpForm
           content={content}
           value={dataHel.value}
-          popUpHandler={popUpHandler}
+          //popUpHandler={popUpHandler}
         />
       ) : (
         ""

@@ -6,6 +6,12 @@ import time from "../../image/time-vals.png";
 import { Context } from "../../LangContext";
 export const LinkFooter: React.FC = () => {
   const lang = useContext(Context);
+  const text =
+    lang === "ru" ? "ОГРНИП: 321774600194776" : "PSRNSP: 321774600194776";
+  const ip =
+    lang === "ru"
+      ? "ИП: Шохирев Сергей Сиргеевич"
+      : "SP Shokhirev Sergey Sirgeevich";
   const address =
     lang === "ru"
       ? "500 метров от МКАД по Новорижскому"
@@ -16,6 +22,8 @@ export const LinkFooter: React.FC = () => {
       : "highway, exit to Myakininskoe highway.";
   return (
     <div className="contact-footer">
+      <p>{ip}</p>
+      <p>{text}</p>
       <p>
         <img src={geoLocation} alt="" />
         {address}
@@ -23,10 +31,10 @@ export const LinkFooter: React.FC = () => {
         {address_1}
       </p>
       <p>
-        <img src={phone} alt="" /> +7 (495) 77-000-77, +7 (800) 551-77-96
+        <img src={phone} alt="" /> +8-800-555-61-47
       </p>
       <p>
-        <img src={mailIcon} alt="" /> office@heliport-moscow.ru
+        <img src={mailIcon} alt="" /> helics.biz@gmail.com
       </p>
       <p>
         <img src={time} alt="" />

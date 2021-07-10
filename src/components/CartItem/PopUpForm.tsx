@@ -1,7 +1,8 @@
 import React, { FormEvent, useContext, useState } from "react";
 import { Context } from "../../LangContext";
+import axios from "axios";
+
 type TProps = {
-  popUpHandler: () => void;
   content: any;
   value: number;
 };
@@ -10,11 +11,7 @@ interface IStateForm {
   phone: string;
   description: string;
 }
-export const PopUpForm: React.FC<TProps> = ({
-  popUpHandler,
-  content,
-  value,
-}) => {
+export const PopUpForm: React.FC<TProps> = ({ content, value }) => {
   const [dataForm, setDataForm] = useState<IStateForm>({
     fullName: "",
     phone: "",
@@ -32,9 +29,26 @@ export const PopUpForm: React.FC<TProps> = ({
     }));
   };
 
+  const submitHanler = () => {
+    if (dataForm.fullName === "" || dataForm.phone === "") return;
+    axios({
+      method: "post",
+      url: "../../../uniMail-master/script/mail.php",
+      data: {
+        name: dataForm.fullName,
+        phone: dataForm.phone,
+        desc: dataForm.description,
+      },
+    })
+      .then((res: any) => {})
+      .catch((err: any) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
-      <div className="bg-lock" onClick={popUpHandler}></div>
+      <div className="bg-lock"></div>
       <form className="pop-form">
         <div className="top-line-form">
           <h1 className="h1">
@@ -68,7 +82,7 @@ export const PopUpForm: React.FC<TProps> = ({
           ></textarea>
         </div>
         <div className="btn-wrapper">
-          <button className="btn btn-sbmt" type="submit">
+          <button onClick={submitHanler} className="btn btn-sbmt" type="submit">
             {lang === "ru" ? "Оставить заявку" : "Submit your application"}
           </button>
         </div>

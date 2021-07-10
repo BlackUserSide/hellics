@@ -1,7 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import tellIcon from "../../../image/bx_bxs-phone-call.svg";
 import { Context, LangContext } from "../../../LangContext";
+import { PopUpForm } from "../../CartItem/PopUpForm";
+
 export const NavBarMain = () => {
+  const [popUp, setPopUp] = useState(false);
   const { changeLang } = useContext(LangContext);
   const change = (lang: string) => {
     localStorage.setItem("lang", lang);
@@ -17,21 +20,15 @@ export const NavBarMain = () => {
         <li className="link-wrapper-main">
           <img src={tellIcon} alt="" />
           <a href="tel:+7 (800) 551-77-96" className="link-phone">
-            +7 (800) 551-77-96
+            +8-800-555-61-47
           </a>
         </li>
-        <li className="link-wrapper-main">
-          <img src={tellIcon} alt="" />
-          <a href="tel:+7 (800) 551-77-96" className="link-phone">
-            +7 (800) 551-77-96
-          </a>
-        </li>
-        <li className="link-wrapper-main">
+        <li onClick={() => setPopUp(true)} className="link-wrapper-main">
           <a href="/#" className="order-call-link">
             {callOrder}
           </a>
         </li>
-        <li className="link-wrapper-main">
+        <li onClick={() => setPopUp(true)} className="link-wrapper-main">
           <a href="/#" className="order-fly-link">
             {call}
           </a>
@@ -46,6 +43,7 @@ export const NavBarMain = () => {
           </div>
         </li>
       </ul>
+      {popUp ? <PopUpForm content={0} value={0} /> : ""}
     </nav>
   );
 };
