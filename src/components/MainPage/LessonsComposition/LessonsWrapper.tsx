@@ -12,7 +12,7 @@ export const LessonsWrapper = () => {
     <div className="lessons-wrapper-main">
       <div className="lessons-composition">
         <h1 className="h1">{center}</h1>
-        <Link to="/lessons">
+        <Link to="/educational-center">
           {more}
           <span></span>
         </Link>
